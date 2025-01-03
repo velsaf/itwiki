@@ -14,6 +14,7 @@ const categoriesList = document.getElementById("categories");
 const articlesSection = document.getElementById("articles");
 const searchInput = document.getElementById("search");
 const backButton = document.getElementById("backButton");
+const menuToggle = document.getElementById("menuToggle");
 
 // Категории
 const categories = ["Все", "Веб-технологии", "Программирование", "Инструменты", "Базы данных", "DevOps"];
@@ -66,7 +67,12 @@ function returnToArticleList() {
 categories.forEach(category => {
     const li = document.createElement("li");
     li.textContent = category;
-    li.addEventListener("click", () => filterByCategory(category));
+    li.addEventListener("click", () => {
+        filterByCategory(category);
+        if (window.innerWidth <= 768) {
+            categoriesList.classList.remove("active"); // Скрываем меню после выбора категории
+        }
+    });
     categoriesList.appendChild(li);
 });
 
@@ -78,6 +84,11 @@ searchInput.addEventListener("input", (e) => {
 // Кнопка "Вернуться назад"
 backButton.addEventListener("click", returnToArticleList);
 backButton.style.display = "none"; // Скрываем кнопку при загрузке страницы
+
+// Кнопка меню для мобильных устройств
+menuToggle.addEventListener("click", () => {
+    categoriesList.classList.toggle("active"); // Показываем/скрываем меню
+});
 
 // Функция для фильтрации статей по категории
 function filterByCategory(category) {
