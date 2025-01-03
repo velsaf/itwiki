@@ -1,0 +1,212 @@
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e1e2f; /* Темный фон */
+    color: #e0e0e0; /* Светлый текст */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #2a2a40; /* Темный фон для шапки */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень */
+    animation: fadeInDown 0.5s ease-out; /* Анимация появления */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6c8cff; /* Пастельный синий */
+}
+
+.back-button {
+    background-color: #6c8cff; /* Пастельный синий */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px; /* Скругленные углы */
+    color: #1e1e2f; /* Темный текст */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #5a7cff; /* Более темный оттенок при наведении */
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+/* Боковая панель с категориями */
+nav {
+    width: 250px;
+    background-color: #2a2a40; /* Темный фон */
+    padding: 20px;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.3); /* Тень */
+    animation: fadeInLeft 0.5s ease-out; /* Анимация появления */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #3a3a5a; /* Темный фон для элементов */
+    border-radius: 8px; /* Скругленные углы */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    color: #e0e0e0; /* Светлый текст */
+}
+
+nav ul li:hover {
+    background-color: #4a4a6a; /* Более светлый оттенок при наведении */
+    transform: translateX(5px); /* Сдвиг при наведении */
+}
+
+/* Основной контент */
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #2a2a40; /* Темный фон */
+    margin-left: 20px;
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень */
+    animation: fadeInRight 0.5s ease-out; /* Анимация появления */
+}
+
+.search-container {
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-out; /* Анимация появления */
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4a4a6a; /* Темная рамка */
+    border-radius: 8px; /* Скругленные углы */
+    font-size: 1rem;
+    outline: none;
+    background-color: #3a3a5a; /* Темный фон */
+    color: #e0e0e0; /* Светлый текст */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-container input:focus {
+    border-color: #6c8cff; /* Пастельный синий при фокусе */
+    box-shadow: 0 0 8px rgba(108, 140, 255, 0.5); /* Свечение при фокусе */
+}
+
+.search-container input::placeholder {
+    color: #a0a0a0; /* Серый текст для плейсхолдера */
+}
+
+/* Статьи */
+article {
+    background-color: #3a3a5a; /* Темный фон */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень */
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 0.5s ease-out; /* Анимация появления */
+}
+
+article:hover {
+    transform: translateY(-5px); /* Подъем при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Усиленная тень при наведении */
+}
+
+article h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #6c8cff; /* Пастельный синий */
+}
+
+article p {
+    color: #e0e0e0; /* Светлый текст */
+    line-height: 1.6; /* Улучшенная читаемость */
+}
+
+article small {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4a4a6a; /* Темный фон */
+    border-radius: 8px; /* Скругленные углы */
+    color: #e0e0e0; /* Светлый текст */
+    font-size: 0.875rem;
+    transition: background-color 0.3s;
+}
+
+article small:hover {
+    background-color: #5a5a7a; /* Изменение цвета при наведении */
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
