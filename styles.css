@@ -12,7 +12,7 @@ body {
 
 header {
     background-color: #2a2a40; /* Темный фон для шапки */
-    padding: 20px;
+    padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень */
     animation: fadeInDown 0.5s ease-out; /* Анимация появления */
     display: flex;
@@ -30,7 +30,7 @@ header h1 {
 .back-button {
     background-color: #6c8cff; /* Пастельный синий */
     border: none;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 8px; /* Скругленные углы */
     color: #1e1e2f; /* Темный текст */
     font-weight: 500;
@@ -46,15 +46,28 @@ header h1 {
 .container {
     display: flex;
     flex: 1;
+    flex-direction: column; /* Мобильная версия: вертикальное расположение */
 }
 
 /* Боковая панель с категориями */
 nav {
-    width: 250px;
+    width: 100%; /* Мобильная версия: занимает всю ширину */
     background-color: #2a2a40; /* Темный фон */
-    padding: 20px;
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.3); /* Тень */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень */
     animation: fadeInLeft 0.5s ease-out; /* Анимация появления */
+}
+
+#menuToggle {
+    display: none; /* Скрываем кнопку меню по умолчанию */
+    background-color: #6c8cff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: #1e1e2f;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 nav ul {
@@ -83,7 +96,7 @@ main {
     flex: 1;
     padding: 20px;
     background-color: #2a2a40; /* Темный фон */
-    margin-left: 20px;
+    margin-left: 0; /* Мобильная версия: убираем отступ */
     border-radius: 8px; /* Скругленные углы */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень */
     animation: fadeInRight 0.5s ease-out; /* Анимация появления */
@@ -226,5 +239,60 @@ article small:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.25rem; /* Уменьшаем размер заголовка */
+    }
+
+    .back-button {
+        padding: 6px 10px; /* Уменьшаем кнопку */
+        font-size: 0.875rem;
+    }
+
+    .container {
+        flex-direction: column; /* Вертикальное расположение */
+    }
+
+    nav {
+        width: 100%; /* Занимает всю ширину */
+        padding: 10px;
+    }
+
+    #menuToggle {
+        display: block; /* Показываем кнопку меню */
+    }
+
+    nav ul {
+        display: none; /* Скрываем список категорий по умолчанию */
+    }
+
+    nav ul.active {
+        display: block; /* Показываем список при активации */
+    }
+
+    main {
+        margin-left: 0; /* Убираем отступ */
+        padding: 10px;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    article h2 {
+        font-size: 1.1rem; /* Уменьшаем размер заголовка статьи */
+    }
+
+    article p {
+        font-size: 0.9rem; /* Уменьшаем размер текста */
+    }
+
+    .read-more {
+        padding: 8px 12px; /* Уменьшаем кнопку */
+        font-size: 0.875rem;
     }
 }
